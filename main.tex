@@ -1,20 +1,5 @@
-% 独自のコマンド
-
-% ■ アブストラクト
-%  \begin{jabstract} 〜 \end{jabstract}  ：日本語のアブストラクト
-%  \begin{eabstract} 〜 \end{eabstract}  ：英語のアブストラクト
-
-% ■ 謝辞
-%  \begin{acknowledgment} 〜 \end{acknowledgment}
-
-% ■ 文献リスト
-%  \begin{bib}[100] 〜 \end{bib}
-
-
 \newif\ifjapanese
-
 \japanesetrue  % 論文全体を日本語で書く（英語で書くならコメントアウト）
-
 \ifjapanese
   \documentclass[a4j,twoside,openright,11pt]{jreport} % 両面印刷の場合。余白を綴じ側に作って右起こし。
   %\documentclass[a4j,11pt]{jreport}                  % 片面印刷の場合。
@@ -81,10 +66,6 @@
 \eproject{Interaction Design Project}                 %プロジェクト名
 \edate{January 2017}
 
-
-
-
-
 \begin{document}
 
 \ifjapanese
@@ -113,6 +94,6 @@
 \include{90_acknowledgment}  % 謝辞。要独自コマンド、include先参照のこと
 \include{91_bibliography}  % 参考文献。要独自コマンド、include先参照のこと
 \appendix
-\include{92_appendix}    % 付録
+%\include{92_appendix}    % 付録
 
 \end{document}

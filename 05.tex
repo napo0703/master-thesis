@@ -19,9 +19,9 @@ Webサーバ上に実装した
 \textit{Linda}は，
 複数のプロセスで共有される空間を用いて
 プロセス間通信やデータ共有をサポートする
-分散並列処理を行うためのモデルである．
+分散並列処理を行うためのモデルである\cite{masui_linda}．
 プロセスが共有する空間は\textbf{タプル空間} (Tuple Space) と呼ばれ，
-タプル空間内のデータ (Tuple) を使って通信やデータ共有を行う (図\ref{linda})．
+タプル空間内のデータ （Tuple）を使って通信やデータ共有を行う（図\ref{linda}）．
 \textit{Linda}のモデルはきわめて単純であるが，
 各クライアントやデバイス間で直接送信をする処理を記述する必要がなく，
 柔軟で強力なプロセス間通信を容易に記述することができる．
@@ -38,7 +38,6 @@ Webサーバ上に実装した
 \section{WebLinda}
 
 \textit{WebLinda}は，橋本翔氏が開発したオープンソースソフトウェアで，
-% \footnote{http://shokai.org}
 Node.js\footnote{https://nodejs.org}の
 WebSocketライブラリ「Socket.IO\footnote{http://socket.io}」で
 実装されている．
@@ -70,6 +69,7 @@ Raspberry Pi\footnote{https://www.raspberrypi.org}
 ユーザのリアクションを投稿/表示する際には，
 センサと『わかるらんど』の間で
 
+\vspace{4mm}
 \begin{lstlisting}
 {
     type: "reaction",
@@ -81,6 +81,7 @@ Raspberry Pi\footnote{https://www.raspberrypi.org}
 というようなタプルをやりとりしている．
 
 センサやWebのデータを投稿/表示する際には，
+\vspace{4mm}
 \begin{lstlisting}
 {
     type: "data",
@@ -92,7 +93,7 @@ Raspberry Pi\footnote{https://www.raspberrypi.org}
 \end{lstlisting}
 というようなタプルをやりとりしている．
 
-\vspace{2mm}
+\vspace{4mm}
 \begin{description}
 \item[\texttt{type}]\mbox{}\\
 ユーザのリアクションの場合は\texttt{reaction}，
@@ -102,11 +103,13 @@ Raspberry Pi\footnote{https://www.raspberrypi.org}
 投稿元を表す値．
 
 \item[\texttt{display}]\mbox{}\\
-リアクションやデータの表示時間．単位は秒．リアクションやデータが表示されてからこの秒数が経過すると，自動的に取り下げられ表示されなくなる．
-%20〜86400の間で指定が可能．
+リアクションやデータの表示時間．単位は秒．
+リアクションやデータが表示されてからこの秒数が経過すると，自動的に取り下げられ表示されなくなる．
+20〜86400の間で指定が可能．
 
 \item[\texttt{value}]\mbox{}\\
-リアクションの場合，この値がWebにある画像ファイルのURLだった時は，その画像を投稿者のセルにオーバーレイ表示する．URLでない文字列の場合は，その文字列を投稿者のセルにオーバーレイ表示する．
+リアクションの場合，この値がWebにある画像ファイルのURLだった時は，その画像を投稿者のセルにオーバーレイ表示する．
+URLでない文字列の場合は，その文字列を投稿者のセルにオーバーレイ表示する．
 データの場合，この値がそのままセルの下部に表示される．
 
 \item[\texttt{background}（データのみ）]\mbox{}\\
@@ -114,9 +117,10 @@ Raspberry Pi\footnote{https://www.raspberrypi.org}
 \end{description}
 \vspace{4mm}
 
-以下は，ボタンを押した際に『わかるらんど』にユーザ「@napo0703」として「なる ほど」という「リアクション」を「20秒」表示するタプルを書き込むJavaScriptプログラムの例である．
+以下は，ボタンを押した際に『わかるらんど』にユーザ「@napo0703」として「なる ほど」という「リアクション」を
+「20秒」表示するタプルを書き込むJavaScriptプログラムの例である．
 
-\vspace{2mm}
+\vspace{4mm}
 \begin{lstlisting}
 // Lindaに接続
 const url = "http://linda.masuilab.org";
@@ -137,7 +141,7 @@ const button = $("button").click(function () {
 以下は，先程のプログラムで書き込まれるタプルと合致する
 \texttt{{from: "@napo0703", type: "reaction"}}を含むタプルが書き込まれた場合に
 リアクションを表示するJavaScriptプログラムの例である．
-\vspace{2mm}
+\vspace{4mm}
 \begin{lstlisting}
 // Lindaに接続
 const url = "http://linda.masuilab.org";
@@ -177,3 +181,5 @@ ts.on :connect do
       value: ad + as.to_f + ‘m/s')
 end
 \end{lstlisting}
+
+このようにWebLindaを利用したプロセス間通信はプログラムの作成も意図の理解も極めて容易である。
