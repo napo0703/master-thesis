@@ -1,14 +1,15 @@
 \chapter{評価実験}
 \label{chap:experiment}
 
-本章では、本論文で提案する『わかるらんど』のWISS2016での評価実験について述べる。
+本章では、本論文で提案する『わかるらんど』のWISS2016での評価実験と
+筆者の研究室での長期の運用について述べる。
 
 \newpage
 
 \section{WISS2016での実証実験}
 2016年12月14日から16日の3日間開催されたWISS2016において、
 プレゼンテーションセッション、デモ中継セッション、招待講演中のコミュニケーションシステムとして
-『わかるらんど』を運用する実証実験を行った。
+『わかるらんど』を運用する実証実験を行った\footnote{http://www.wiss.org/WISS2016/WISS\_Challenge.html}。
 WISS2016では運営が用意したチャットシステム「On-Air Forum」と『わかるらんど』の
 2つのコミュニケーションシステムが同時に運用された。
 On-Air ForumはWISS2009から毎年運用されており、
@@ -24,14 +25,14 @@ WISS2016では、プレゼンテーションセッション会場の前方に3�
 会期の半分にあたる2日目の午前までは通常通り『わかるらんど』を運用し、
 2日目の午後からは、参加者からの要望により、アカウント名を隠し匿名で投稿する形に変更し運用を行った。
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[width=9cm]{images/wiss2016.png}
+\includegraphics[width=11cm]{images/wiss2016.png}
 \caption{WISS2016会場のスクリーン}
 \label{wiss2016}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \fbox{\includegraphics[width=9cm]{images/wiss2016stamp.png}}
 \caption{WISS2016の『わかるらんど』でデフォルト用意したスタンプ}
@@ -56,11 +57,11 @@ WISSではこれまでにもさまざまなコミュニケーションシステ�
 
 \subsection{実験結果}
 今回が初めての実験であり過去の実験との比較ができないため、
-実験結果は第\ref{chap:wakaruland}で説明した各機能がどのように使われたのかを観察した結果を中心にまとめる。
+実験結果は第\ref{chap:wakaruland}章で説明した各機能がどのように使われたのかを観察した結果を中心にまとめる。
 
 表\ref{tb:wiss2016experiment}はWISS2016における『わかるらんど』とOn-Air Forumの運用結果である。
 
-\begin{table}[htb]
+\begin{table}[H]
   \begin{center}
     \caption{WISS2016における『わかるらんど』とOn-Air Forumの運用結果}
     \label{tb:wiss2016experiment}
@@ -89,7 +90,7 @@ On-Air Forumは全参加者の約6割にあたる99人がログインし、1回�
 同じく冪分布となっていた。
 図\ref{wiss2016compare}は『わかるらんど』とOn-Air Forumへの投稿数を対数グラフにプロットしたものである。
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{images/wiss2016compare.png}
 \caption{WISS2016における『わかるらんど』（緑）とOn-Air Forum（青）への投稿のアカウントと発言数の分布}
@@ -97,44 +98,67 @@ On-Air Forumは全参加者の約6割にあたる99人がログインし、1回�
 \end{figure}
 
 さらに詳細な検討によると、会の開始から会期の半分にあたる2日目の午前中までの
-『わかるらんど』への投稿数は1,282回であったのに対し、
-2日目の午後から3日目の会期終了までの投稿数は2,499回であった。
+『わかるらんど』への参加者は41人、投稿数は1,282回であったのに対し、
+2日目の午後から3日目の会期終了までの参加者は71人、投稿数は2,499回であった。
 これは、参加者が『わかるらんど』の使い方に慣れてきたのに加えて、
-2日目の午後から適用したアカウント名を隠した匿名化が投稿数の増加に大きく影響したと思われる。
+2日目の午後から適用したアカウント名を隠した匿名化が参加者と投稿数の増加に大きく影響したと思われる。
 
 スタンプについては、デフォルトで用意した33種類に加えて525種類のスタンプが作成され、
 会期中に投稿されたスタンプは558種類であった。
-最も多く使われたスタンプは「笑」で141回投稿された。
-2番目に多く使われたスタンプは「👏」、3番目は「なる ほど」であった。
+最も多く使われたスタンプは「笑」で合計で141回投稿された。
+2番目に多く使われたスタンプは「拍手の絵文字」、
+3番目は「なる ほど」であった（表\ref{tb:wiss2016stamp}）（図\ref{wiss_top3}）。
 「笑」は発表者が取りに行った時や、
 予想だにしないアクシデントがあった時などに使用されていた。
-「👏」は発表が終わった時に発表者に対して拍手をするタイミングで投稿されていた。
+「拍手の絵文字」は発表が終わった時に発表者に対して拍手をするタイミングで投稿されていた。
 「なる ほど」は汎用性の高い相槌として、発表中に満遍なく使用されていた。
 
-また、発表中に「ポケモンGo\footnote{http://www.pokemongo.jp}」の話題が出た時や
+\begin{table}[H]
+  \begin{center}
+    \caption{WISS2016の『わかるらんど』で100回以上投稿されたスタンプ}
+    \label{tb:wiss2016stamp}
+    \begin{tabular}{|l|r|} \hline
+      スタンプ     & 投稿回数 \\ \hline \hline
+      笑           & 141回 \\ \hline
+      拍手の絵文字 & 139回 \\ \hline
+      なる ほど    & 114回 \\ \hline
+      すご い！    & 104回 \\ \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{images/wiss_top3.png}
+\caption{「笑」（左）、拍手の絵文字（中）、「なる ほど」（右）スタンプ}
+\label{wiss_top3}
+\end{figure}
+
+特徴的な使われ方としては、発表中に「ポケモンGo\footnote{http://www.pokemongo.jp}」の話題が出た時や
 「自由形状の竹とんぼのインタラクティブデザインシステム」の発表では、
-ポケモンに関するスタンプ\ref{pokemon}や竹トンボを飛ばす少年のスタンプ\ref{taketombo}
-などを誰かが『わかるらんど』に投稿し、他の参加者がそのスタンプをコピーして使用する
+モンスターボール\footnote{ポケモンを捕獲するためのアイテム}のスタンプ（図\ref{pokemon}）や
+竹トンボを飛ばす少年のスタンプ（図\ref{taketombo}）
+などを誰かが『わかるらんど』に投稿し、他の多くの参加者がそのスタンプをコピーして使用する
 という使われ方が見られた。
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=11cm]{images/pokemon.png}
-\caption{沢山投稿されるモンスターボールのスタンプ}
+\caption{多くの参加者が『わかるらんど』にモンスターボールのスタンプを投稿する様子}
 \label{pokemon}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=11cm]{images/taketombo.png}
-\caption{沢山投稿される竹トンボを飛ばす少年のスタンプ}
+\caption{多くの参加者が『わかるらんど』に竹とんぼを飛ばす少年のスタンプを投稿する様子}
 \label{taketombo}
 \end{figure}
 
 
 \section{研究室においての利用}
 筆者の研究室では，
-約6ヶ月の間『わかるらんど』を研究室内の大型ディスプレイに表示して実際に利用してきた．
+約9ヶ月の間『わかるらんど』を研究室内の大型ディスプレイに表示して実際に利用してきた．
 筆者の研究室ではWebLindaを使用して，
 Web情報やArduinoやRaspberry Piに接続したセンサ情報を利用し，
 \begin{itemize}
@@ -148,7 +172,7 @@ Web情報やArduinoやRaspberry Piに接続したセンサ情報を利用し，
 IoT環境を構築している(図\ref{slack})が，『わかるらんど』と組み合わせることで
 さらに便利に使うことができた．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \fbox{
 \includegraphics[width=9cm]{images/slack.png}
@@ -161,7 +185,7 @@ IoT環境を構築している(図\ref{slack})が，『わかるらんど』と�
 明るさのデータの値が小さい時は\texttt{background}画像を変更することで，
 照明が点いているのか消えているのかがわかるようになった．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/light.png}
 \caption{照明が消えている時（左）と点いている時（右）}
@@ -173,7 +197,7 @@ IoT環境を構築している(図\ref{slack})が，『わかるらんど』と�
 実際に扉が開いた時に10秒間だけ\texttt{background}を図\ref{door}右のように
 扉を開ける人の画像にすることで，誰かが入室したことが視覚的にわかるようになった．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/door.png}
 \caption{ドアの普段の表示（左）と誰かが入室した時（右）}
@@ -188,7 +212,7 @@ IoT環境を構築している(図\ref{slack})が，『わかるらんど』と�
 誰かが面白いことを言ったときに「笑」というリアクションが並び，
 『わかるらんど』を通じて一体感が生まれたりすることもあった(図\ref{wara})．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/wara.png}
 \caption{『わかるらんど』を使用したミーティング}
@@ -202,14 +226,14 @@ Webブラウザで『わかるらんど』を開いてリアクションする�
 これらを利用することで，限られたリアクションではあるが，
 Webブラウザを開くことなく『わかるらんど』にリアクションを表示することができるようになった．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=8cm]{images/heebutton.png}
 \caption{押すと「へぇ〜」とリアクションできるボタン}
 \label{heebutton}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=7cm]{images/10key.png}
 \caption{テンキーを利用した入力装置}

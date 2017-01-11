@@ -26,7 +26,7 @@ Webサーバ上に実装した
 各クライアントやデバイス間で直接送信をする処理を記述する必要がなく，
 柔軟で強力なプロセス間通信を容易に記述することができる．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \fbox{
 \includegraphics[width=9cm]{images/linda.png}
@@ -134,7 +134,7 @@ const button = $("button").click(function () {
     type: "reaction",
     from: "@napo0703",
     display: "20",
-    value: "http://masuilab.org/image.jpg",
+    value: "なる ほど",
   };
 });
 \end{lstlisting}
@@ -159,8 +159,9 @@ ts.watch({
 \vspace{4mm}
 以下は現在の江ノ島の風向と風速をタプル空間に書き込むRubyプログラムである．
 Nokogiri\footnote{http://www.nokogiri.org}というライブラリで
-Webページから必要な情報をスクレイピングしてタプル空間に書き込んでいる．
-\vspace{2mm}
+江の島ヨットハーバー\footnote{http://www.s-n-p.jp/kishou.htm}の
+webページから必要な情報をスクレイピングしてタプル空間に書き込んでいる．
+\vspace{4mm}
 \begin{lstlisting}
 url = 'http://linda.masuilab.org'
 linda = Linda::SocketIO::Client.connect url

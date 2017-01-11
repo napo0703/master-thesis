@@ -11,8 +11,8 @@ IoT時代の情報視覚化と、
 
 \section{WISSのチャットの分析}
 
-近年，学会などでタイムライン表示のテキストチャットが
-利用される機会が増えている\cite{goto2012}．
+近年，学会などでチャットなどのコミュニケーションシステムが
+利用される機会が増えていることを第\ref{chap:background_2}章で解説した．
 学会チャットシステムを利用すると，
 発表中に参加者が意見交換したり疑問を表明したりできるといった利点があるが，
 以下のような問題も存在する．
@@ -39,13 +39,13 @@ WISS（Workshopn on Interactive Systems and Software）コンファレンス\foo
 図\ref{powerlaw}のようにアカウントと発言数は冪分布になっており，
 特定の人ばかりが発言して，発言しない人は全く発言しない傾向が顕著に現れている．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering\includegraphics[width=8cm]{images/wisschat.png}
 \caption{WISS2015のチャットにおけるアカウントと発言数の分布}
 \label{wisschat}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering\includegraphics[width=8cm]{images/powerlaw.png}
 \caption{図\ref{wisschat}の両対数グラフ}
 \label{powerlaw}
@@ -75,14 +75,14 @@ WISS（Workshopn on Interactive Systems and Software）コンファレンス\foo
 表示時間はユーザがスタンプをクリックする時間の長さで設定される．
 また、投稿するスタンプは投稿画面でユーザが自由に追加/削除することができる．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/dashboard.png}
 \caption{『わかるらんど』のダッシュボード}
 \label{dashboard}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/console.png}
 \caption{『わかるらんど』の投稿画面}
@@ -95,7 +95,7 @@ WISS（Workshopn on Interactive Systems and Software）コンファレンス\foo
 『わかるらんど』のダッシュボードに表示されるセルは，ユーザのテキストや画像のスタンプを表示する
 「リアクション」セルと，センサやWebの情報を表示する「データ」セルの2種類がある(図\ref{cell})．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/cell.png}
 \caption{リアクション（左）とデータ（右）}
@@ -108,7 +108,7 @@ WISS（Workshopn on Interactive Systems and Software）コンファレンス\foo
 この場合は図\ref{n_m_s_d}のように\url{@napo0703,@masui,@shokai,@dorayaki0}の4人のユーザのセルが
 ダッシュボードに表示される．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/n_m_s_d.png}
 \caption{4人のユーザを表示}
@@ -117,7 +117,7 @@ WISS（Workshopn on Interactive Systems and Software）コンファレンス\foo
 
 \url{https://wakaruland.com/weather,temperature,wind}のように「\url{@}」を付けなかった場合は図\ref{w_t_w}のように\url{weather,temperature,wind}の3つがデータのセルとして表示される．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/w_t_w.png}
 \caption{3つのデータを表示}
@@ -126,7 +126,7 @@ WISS（Workshopn on Interactive Systems and Software）コンファレンス\foo
 
 また，\url{https://wakaruland.com/@napo0703,weather,@masui,wind,@shokai}のようにリアクションとデータを合わせて表示させることも可能である（図\ref{n_w_m_w_s}）．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/n_w_m_w_s.png}
 \caption{ユーザとデータを表示}
@@ -151,16 +151,19 @@ WebにアップロードしURLを得ることで追加が可能である．
 この「わからん」は1行に表示されているが，「わか らん」と改行を入れたい場所に空白文字を入力
 することで，図\ref{wakaran}右のように2行で表示される．
 
+また、ダッシュボードには現在表示されているスタンプを自分のスタンプ一覧に追加する機能があり、
+他の参加者が投稿したスタンプをコピーして使うことも可能である。
+
 スタンプの削除は，スタンプにマウスオーバーすると右上に表示される「×」ボタンを押すことで削除できる．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/stamp.png}
 \caption{テキストスタンプ（左）と画像スタンプ（右）}
 \label{stamp}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/wakaran.png}
 \caption{「わからん」スタンプ（左）と「わか らん」スタンプ（右）}
@@ -176,14 +179,14 @@ WebにアップロードしURLを得ることで追加が可能である．
 各種のセンサの値やWebの情報等を表示している．
 データはリアルタイムに最新のものに更新されていく．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/discussion.png}
 \caption{会議や発表の場での利用例}
 \label{discussion}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{images/sensors.png}
 \caption{ダッシュボードとしての利用例}
@@ -213,19 +216,18 @@ WebにアップロードしURLを得ることで追加が可能である．
 相槌は社会的承認であり\cite{130001611628}、
 大勢の相槌を視覚化することは大きな意義がある。
 学生，教員，企業の研究者など様々なバックグラウンドの人が入り混じった状況で
-「下手な発言ができない」「気の利いたことを言わなければならない」という
+「下手な発言ができない」「議論の邪魔をしてはいけない」という
 投稿を躊躇させる要素を限りなく減らし，
 本当は議論に参加したいけど声が出ない/手を上げる勇気がない人でも
 「なるほど」「わかる」などを『わかるらんど』に投稿することで「参加」することができる．
 テキストで記述すると長くなってしまう内容も
 画像スタンプを投稿することで分かってもらうことができると考える．
-
-また，長いテキストを投稿するには適していないので『わかるらんど』を使って議論することは難しいが，
+長いテキストを投稿するには適していないので『わかるらんど』を使って議論することは難しいが，
 多くの会議やコンファレンスでは発表後に議論の時間が設けられているため議論はその時に行えばよい．
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{images/wakaruland150.png}
+\includegraphics[width=12cm]{images/wakaruland150.png}
 \caption{150人で『わかるらんど』を使用したイメージ}
 \label{wakaruland150}
 \end{figure}
