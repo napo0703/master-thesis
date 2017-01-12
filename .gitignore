@@ -6,9 +6,7 @@
 *.log
 *.lot
 *.out
-*.pdf
 *.swp
 *.toc
-*~
 .DS_Store
 Thumbs.db
